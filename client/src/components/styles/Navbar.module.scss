@@ -1,0 +1,319 @@
+@import "../../globalStyles/variable.scss";
+
+.container {
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+  background-color: $light-bg;
+  position: relative;
+  top: 0;
+
+  .toggleSwitchIconContainer {
+    padding: 10px;
+
+    @include breakpoint(sm) {
+      width: 100%;
+      position: relative;
+      flex: 1;
+    }
+  }
+
+  .cart__container {
+    display: flex;
+    width: 100%;
+    display: grid;
+    place-items: end;
+    align-items: flex-end;
+    position: relative;
+    flex: 5;
+    z-index: 99999;
+    @include breakpoint(sm) {
+      flex: 1;
+      .open {
+        display: none;
+      }
+    }
+    .cartModal__container {
+      display: flex;
+      height: fit-content;
+      z-index: 999;
+
+      @include breakpoint(sm) {
+        z-index: 999;
+        display: flex;
+        height: fit-content;
+      }
+    }
+    .cart__icon {
+      font-size: 60px;
+      padding: 10px;
+      color: black;
+      position: relative;
+      z-index: 9999;
+      &:hover {
+        cursor: pointer;
+      }
+
+      &.glow {
+        color: aqua;
+        z-index: 9999;
+      }
+    }
+
+    & > p {
+      position: absolute;
+      top: 0%;
+      right: 0.5%;
+      border-radius: 50%;
+      background: white;
+      width: 20px;
+      text-align: center;
+      z-index: 99999;
+      color: black;
+    }
+  }
+
+  .toggleSwitch {
+    transition: 0.5s ease-in-out;
+    flex: 1;
+    z-index: 99999;
+    @include breakpoint(sm) {
+      width: fit-content;
+      transition: 0.5s ease-in-out;
+      display: flex;
+      flex: 1;
+    }
+  }
+}
+
+.navbar,
+.navbar_darkmode {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $light-bg;
+  @include breakpoint(sm) {
+    width: 100%;
+    position: sticky;
+    top: 0px;
+  }
+
+  &.navbar_darkmode {
+    background-color: $light-bg;
+  }
+  .navbar__container {
+    width: 1200px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    height: $navbar-height;
+    position: relative;
+
+    .navbar__list__container {
+      display: flex;
+      width: 100%;
+      align-content: center;
+      gap: 10px;
+      justify-content: space-between;
+      position: relative;
+
+      .logo__container {
+        position: relative;
+        height: 100%;
+        & > a {
+          display: flex;
+          justify-content: center;
+        }
+        .logo {
+          display: flex;
+          object-fit: contain;
+          width: 120px;
+          justify-self: center;
+        }
+
+        @include breakpoint(sm) {
+          flex: 0;
+          justify-content: center;
+        }
+      }
+
+      .leftside {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        gap: 10px;
+
+        @include breakpoint(sm) {
+          position: absolute;
+          align-items: center;
+          justify-content: space-between;
+          height: 150px;
+          top: $navbar-height;
+          // background-color: rgba(94, 88, 88, 0.24);
+          background-color: rgb(160, 151, 151);
+          visibility: hidden;
+          width: 100%;
+          align-self: center;
+
+          // box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 1);
+          // -webkit-box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 1);
+          // -moz-box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 1);
+        }
+
+        &.openLeftSide {
+          @include breakpoint(sm) {
+            visibility: visible;
+            display: flex;
+            right: 0%;
+            transition: 1s ease-in-out;
+            animation-name: run;
+            animation-duration: 0.6s;
+            display: flex;
+            flex-direction: column;
+            @keyframes run {
+              0% {
+                opacity: 0;
+              }
+
+              100% {
+                opacity: 100%;
+              }
+            }
+          }
+        }
+
+        .searchBar__container {
+          display: flex;
+          width: 60%;
+          justify-content: center;
+          align-items: center;
+          border-radius: 5px;
+          border: 3px solid black;
+          height: 40px;
+          flex: 1;
+
+          @include breakpoint(sm) {
+            width: 100%;
+            flex: 0;
+          }
+
+          .searchByCategory {
+            height: 36px;
+            margin-right: 10px;
+            background-color: rgba(201, 177, 141, 0.644);
+            &:hover {
+              cursor: pointer;
+            }
+          }
+
+          .navbar__searchBar {
+            width: 100%;
+            border: none;
+            background-color: transparent;
+            height: 40px;
+            font-size: 15px;
+            &:focus {
+              outline: none;
+            }
+          }
+          .form {
+            width: 100%;
+          }
+          .searchIcon {
+            height: 40px;
+            width: 90%;
+            max-width: fit-content;
+            font-size: 30px;
+            background-color: rgba(77, 60, 60, 0.712);
+            color: rgba(255, 255, 255, 0.877);
+            &:hover {
+              cursor: pointer;
+            }
+
+            &.searchIconDarkMode {
+              background-color: black;
+            }
+          }
+        }
+
+        .menu__list__container {
+          display: flex;
+          gap: 10px;
+          width: max-content;
+          flex: 0.1;
+          @include breakpoint(sm) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            flex: 2;
+            gap: 20px;
+          }
+          .navbar__list__item {
+            display: flex;
+            align-items: center;
+            width: fit-content;
+
+            @include breakpoint(sm) {
+              display: flex;
+              flex-direction: column;
+            }
+            .profile__icon {
+              font-size: 40px;
+              color: rgb(20, 17, 17);
+            }
+            .userOptions {
+              position: absolute;
+              right: -1%;
+              bottom: 30%;
+              display: flex;
+              background-color: transparent;
+              border: none;
+              color: rgba(0, 0, 0, 0.61);
+              font-weight: 700;
+              font-family: $font-Inter;
+              text-align: center;
+              align-self: center;
+
+              &:hover {
+                cursor: pointer;
+              }
+              & > option {
+                font-weight: bold;
+              }
+            }
+
+            & > li {
+              list-style-type: none;
+              color: rgba(0, 0, 0, 0.61);
+              white-space: nowrap;
+              font-weight: 500;
+              &:hover {
+                text-decoration: underline;
+                cursor: pointer;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .menulist_icon {
+      display: flex;
+      align-self: center;
+      font-size: 40px;
+      justify-content: flex-end;
+      display: none;
+
+      @include breakpoint(sm) {
+        display: block;
+      }
+    }
+  }
+}

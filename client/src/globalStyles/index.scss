@@ -1,0 +1,132 @@
+@import "../globalStyles/variable.scss";
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  box-sizing: border-box;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #555;
+  height: 50px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+::-webkit-scrollbar {
+  display: block;
+  width: 10px;
+}
+
+body {
+  font-family: $font-Inter;
+}
+
+#light {
+  background-color: $light-bg-body;
+  transition: 0.3s background-color;
+}
+#light button {
+  &:enabled {
+    color: white;
+    background-color: $light-bg;
+    border: none;
+  }
+}
+#light button[disabled] {
+  color: gray;
+  background-color: darken($light-bg, 20%);
+  border: none;
+}
+
+//darkmode
+#dark {
+  background-color: black;
+  transition: 0.3s background-color;
+}
+#dark a {
+  color: white;
+  text-decoration: none;
+}
+
+#dark label {
+  color: white;
+}
+#dark li {
+  color: white;
+}
+#dark input {
+  color: white;
+  background: transparent;
+}
+
+#dark ::placeholder {
+  color: rgba(255, 255, 255, 0.705);
+}
+#dark select {
+  color: white;
+}
+
+#dark option {
+  color: black;
+}
+
+#dark button {
+  &:enabled {
+    color: white;
+    background-color: $light-bg;
+    border: none;
+  }
+}
+#dark button[disabled] {
+  color: gray;
+  background-color: darken($light-bg, 20%);
+  border: none;
+}
+#dark #searchByCategoryDark {
+  height: 36px;
+  color: white;
+  background-color: black;
+}
+#dark #optionDark {
+  background-color: black;
+  color: white;
+  height: 36px;
+}
+
+#dark svg:not(#cart__svg) {
+  color: white;
+}
+
+#dark {
+  color: white;
+}
+
+#dark p:not(.darkp) {
+  color: white;
+}
+
+#dark .cartp {
+  background-color: black;
+  color: white;
+}
+
+#dark h2:not(#cart__h2) {
+  color: white;
+}
+#dark .darkdiv {
+  background-color: rgb(51, 48, 48);
+  box-shadow: 0px 0px 10px 3px rgba(255, 255, 255, 1);
+  -webkit-box-shadow: 0px 0px 10px 3px rgba(255, 255, 255, 1);
+  -moz-box-shadow: 0px 0px 10px 3px rgba(255, 255, 255, 1);
+}
+#dark h3 {
+  color: black;
+}
+#dark .dark_div_border {
+  border-bottom: 1px dotted white;
+}

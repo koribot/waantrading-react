@@ -1,0 +1,47 @@
+@import "../../globalStyles/variable.scss";
+
+.home__container {
+  height: 100vh;
+  display: block;
+
+  & > div {
+    & > p {
+      text-align: center;
+    }
+  }
+}
+
+// #dark label {
+//   color: white;
+// }
+// #dark li {
+//   color: white;
+// }
+// #dark input {
+//   color: white;
+// }
+
+// #dark ::placeholder {
+//   color: white;
+// }
+// #dark select {
+//   color: white;
+// }
+// #dark option {
+//   color: black;
+// }
+// #dark #searchByCategoryDark {
+//   height: 36px;
+//   color: white;
+//   background-color: black;
+// }
+// #dark #optionDark {
+//   background-color: black;
+//   color: white;
+//   height: 36px;
+// }
+
+// #dark svg {
+//   color: white;
+//   background-color: black;
+// }

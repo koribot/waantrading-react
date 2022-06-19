@@ -1,0 +1,12 @@
+@import "../../globalStyles/variable.scss";
+
+.body {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+
+  .body__wrapper {
+    width: 1200px;
+    padding: 0px 10px;
+  }
+}

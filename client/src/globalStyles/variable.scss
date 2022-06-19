@@ -1,0 +1,46 @@
+// @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+// @import url("https://fonts.googleapis.com/css2?family=Acme&family=Bebas+Neue&display=swap");
+// @import url("https://fonts.googleapis.com/css2?family=Acme&family=Bebas+Neue&family=Inter:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap");
+
+//fonts
+$font-acme: "Acme", sans-serif;
+$font-Inter: "Inter", sans-serif;
+$font-Bebas: "Bebas Neue", cursive;
+
+//heights
+$navbar-height: 80px;
+
+//colors
+// $light-bg: rgba(255, 166, 0, 0.575);
+$light-bg: rgb(214, 151, 33);
+$grey: #2a2a2a;
+$blue: #1fb5bf;
+$btnBg: rgb(20, 20, 192);
+$light-bg-body: rgb(216, 209, 209);
+
+//screens
+$sm: 37.5em;
+$md: 48em;
+$lg: 64em;
+$xl: 1026px;
+$xxl: 1300px;
+
+//breakpoints
+@mixin breakpoint($point) {
+  @if $point == md {
+    @media (max-width: $md) {
+      @content;
+    }
+  }
+  @if $point == xxl {
+    @media (max-width: $xxl) {
+      @content;
+    }
+  }
+  @if $point == sm {
+    @media (max-width: $sm) {
+      @content;
+    }
+  }
+}

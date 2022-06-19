@@ -1,0 +1,4 @@
+client/firebase.js
+client/.env
+server/.env
+**/node_modules
