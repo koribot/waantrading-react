@@ -17,6 +17,8 @@
       @include breakpoint(sm) {
         display: flex;
         flex-direction: column;
+        align-items: center;
+        gap: 50px;
       }
 
       .footer__content__1 {
@@ -24,6 +26,13 @@
         flex-direction: column;
         align-items: center;
         gap: 30px;
+
+        @include breakpoint(sm) {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 10px;
+        }
         & > label {
           font-size: 20px;
         }
@@ -47,6 +56,13 @@
         flex-direction: column;
         align-items: flex-start;
         gap: 30px;
+
+        @include breakpoint(sm) {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 10px;
+        }
         & > label {
           font-size: 20px;
         }
@@ -55,6 +71,13 @@
           flex-direction: column;
           gap: 5px;
           align-items: flex-start;
+
+          @include breakpoint(sm) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+          }
 
           & > a {
             text-decoration: none;
@@ -72,6 +95,13 @@
         flex-direction: column;
         gap: 30px;
         align-items: flex-start;
+
+        @include breakpoint(sm) {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 10px;
+        }
         & > label {
           font-size: 20px;
         }
@@ -81,6 +111,12 @@
           gap: 5px;
           align-items: flex-start;
 
+          @include breakpoint(sm) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+          }
           & > a {
             text-decoration: none;
             color: black;
@@ -92,5 +128,11 @@
         }
       }
     }
+  }
+}
+
+.copywright {
+  & > p {
+    text-align: center;
   }
 }

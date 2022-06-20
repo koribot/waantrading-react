@@ -3,12 +3,6 @@
 .home__container {
   height: 100vh;
   display: block;
-
-  & > div {
-    & > p {
-      text-align: center;
-    }
-  }
 }
 
 // #dark label {

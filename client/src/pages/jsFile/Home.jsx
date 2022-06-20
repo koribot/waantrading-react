@@ -13,9 +13,6 @@ const Home = () => {
       <Navbar mouse={true} />
       <Body />
       <Footer />
-      <div>
-        <p>@WaanTrading</p>
-      </div>
     </div>
   );
 };

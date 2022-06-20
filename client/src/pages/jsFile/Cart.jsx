@@ -5,6 +5,7 @@ import ThemeContext from "../../helpers/Contexts/Themecontext";
 import styles from "../styles/Cart.module.scss";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
+import Footer from "../../components/jsFile/Footer";
 const Cart = () => {
   const { theme } = useContext(ThemeContext);
 
@@ -67,6 +68,7 @@ const Cart = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

@@ -23,8 +23,7 @@
     display: flex;
     width: 100%;
     display: grid;
-    place-items: end;
-    align-items: flex-end;
+    place-items: flex-end;
     position: relative;
     flex: 5;
     z-index: 99999;
@@ -259,7 +258,7 @@
             display: flex;
             align-items: center;
             width: fit-content;
-
+            position: relative;
             @include breakpoint(sm) {
               display: flex;
               flex-direction: column;
@@ -270,8 +269,8 @@
             }
             .userOptions {
               position: absolute;
-              right: -1%;
-              bottom: 30%;
+              right: -25%;
+              bottom: 15%;
               display: flex;
               background-color: transparent;
               border: none;
@@ -286,6 +285,12 @@
               }
               & > option {
                 font-weight: bold;
+              }
+
+              @include breakpoint(sm) {
+                position: absolute;
+                bottom: 15%;
+                right: -25%;
               }
             }
 
