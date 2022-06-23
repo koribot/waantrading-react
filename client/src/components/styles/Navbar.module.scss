@@ -3,7 +3,6 @@
 .container {
   display: flex;
   align-items: center;
-
   width: 100%;
   background-color: $light-bg;
   position: relative;
@@ -192,17 +191,22 @@
           justify-content: center;
           align-items: center;
           border-radius: 5px;
-          border: 3px solid black;
+          // border: 3px solid black;
+          border-radius: 10px;
           height: 40px;
           flex: 1;
+          background-color: white;
 
+          &:focus {
+            border: 3px solid black;
+          }
           @include breakpoint(sm) {
             width: 100%;
             flex: 0;
           }
 
           .searchByCategory {
-            height: 36px;
+            height: 42px;
             margin-right: 10px;
             background-color: rgba(201, 177, 141, 0.644);
             &:hover {

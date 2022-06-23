@@ -2,6 +2,7 @@ import {
   Button,
   MobileStepper,
   Paper,
+  Step,
   Typography,
   useTheme,
 } from "@mui/material";
@@ -10,6 +11,9 @@ import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
 import { useEffect } from "react";
 import styles from "../styles/ImageSlider.module.scss";
+import PauseCircleOutlineIcon from "@mui/icons-material/PauseCircleOutline";
+import PlayCircleOutlineIcon from "@mui/icons-material/PlayCircleOutline";
+
 const MyCollection = [
   {
     label: "First Picture",
@@ -29,44 +33,88 @@ const ImageSlider = () => {
   const CollectionSize = MyCollection.length;
   const theme = useTheme();
   const [index, setActiveStep] = useState(0);
-  const [stopInterval, setStopInterval] = useState(false);
+  const [transition, setShowTransition] = useState(false);
+  const [addClasslist, setAddClasslist] = useState(false);
+  const image = document.getElementById("image");
+  const [isButtonNext, setIsButtonNext] = useState(false);
+  const [isPlay, setIsPlay] = useState(true);
+
+  //increment index,
+  useEffect(() => {
+    if (isPlay) {
+      if (!isButtonNext) {
+        const id = setInterval(() => {
+          setActiveStep((i) => (i < MyCollection.length - 1 ? i + 1 : 0));
+        }, 8000);
+
+        return () => window.clearInterval(id);
+      } else {
+        const id = setTimeout(() => {
+          setIsButtonNext(false);
+        }, 2000);
+
+        return () => window.clearTimeout(id);
+      }
+    }
+  }, [isButtonNext, isPlay]);
 
   useEffect(() => {
-    const intv = setInterval(() => {
-      setActiveStep(index < MyCollection.length - 1 ? index + 1 : 0);
-    }, 9000);
+    setShowTransition(true);
+    const id = setTimeout(() => {
+      setShowTransition(false);
+    }, 1000);
 
-    return () => clearInterval(intv);
+    return () => window.clearTimeout(id);
   }, [index]);
 
-  const goToNextPicture = () => {
-    setActiveStep(index < MyCollection.length - 1 ? index + 1 : 0);
+  const goToNextPicture = (e) => {
+    setIsButtonNext(true);
+    setShowTransition(false);
+    setActiveStep((i) => (i < MyCollection.length - 1 ? i + 1 : 0));
   };
   const goToPrevious = () => {
-    setActiveStep(index > 0 ? index - 1 : MyCollection.length - 1);
+    setIsButtonNext(true);
+    setShowTransition(false);
+    setActiveStep((i) => (i > 0 ? i - 1 : MyCollection.length - 1));
   };
 
   return (
-    <div className={`${styles.container} darkdiv`}>
-      <Paper square elevation={0} className={styles.header}>
-        <Typography className={styles.title}>Featured Products</Typography>
+    <div className={`${styles.container} dark-div-bg dark-div-shadow`}>
+      <Paper elevation={10} square className={`${styles.header} dark-div-bg`}>
+        <Typography className={styles.title}>Products</Typography>
       </Paper>
-      <img
-        src={MyCollection[index].imgPath}
-        style={{
-          width: "1140px",
-          maxHeight: "472px",
-          display: "block",
-          overflow: "hidden",
-          objectFit: "contain",
-        }}
-        alt={MyCollection[index].label}
-      />
+      <Step>
+        <div className={styles.image__container}>
+          {isPlay ? (
+            <PauseCircleOutlineIcon
+              className={styles.pause__icon}
+              onClick={() => setIsPlay(!isPlay)}
+            />
+          ) : (
+            <PlayCircleOutlineIcon
+              className={styles.pause__icon}
+              onClick={() => setIsPlay(!isPlay)}
+            />
+          )}
+
+          <img
+            src={MyCollection[index].imgPath}
+            alt={MyCollection[index].label}
+            id="image"
+            className={`${styles.default__image} ${
+              transition ? styles.imagetrans : undefined
+            }`}
+          />
+        </div>
+      </Step>
       <MobileStepper
+        variant="dots"
         position="static"
         index={index}
         steps={CollectionSize}
         activeStep={index}
+        elevation={10}
+        className={`${styles.stepper} dark-div-bg`}
         nextButton={
           <Button
             size="small"

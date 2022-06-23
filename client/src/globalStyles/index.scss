@@ -24,12 +24,16 @@
 
 body {
   font-family: $font-Inter;
+  overflow-x: hidden;
 }
 
+//light mode
 #light {
   background-color: $light-bg-body;
   transition: 0.3s background-color;
 }
+
+//light mode button tags
 #light button {
   &:enabled {
     color: white;
@@ -48,33 +52,46 @@ body {
   background-color: black;
   transition: 0.3s background-color;
 }
+
+#dark .dark-text-color-black {
+  color: black;
+}
+#dark .dark-text-color-white {
+  color: rgb(247, 247, 247);
+}
+
+//dark mode a tags
 #dark a {
   color: white;
   text-decoration: none;
 }
 
+//dark mode label tags
 #dark label {
   color: white;
 }
+
+//dark mode li tags
 #dark li {
   color: white;
 }
-#dark input {
-  color: white;
-  background: transparent;
-}
 
-#dark ::placeholder {
-  color: rgba(255, 255, 255, 0.705);
-}
-#dark select {
+//dark mode svg taggs
+#dark svg {
   color: white;
 }
 
-#dark option {
+//dark mode p tags
+#dark p {
+  color: white;
+}
+
+//dark mode h3 tags
+#dark h3 {
   color: black;
 }
 
+//dark mode button tags
 #dark button {
   &:enabled {
     color: white;
@@ -87,46 +104,47 @@ body {
   background-color: darken($light-bg, 20%);
   border: none;
 }
-#dark #searchByCategoryDark {
-  height: 36px;
-  color: white;
-  background-color: black;
-}
-#dark #optionDark {
-  background-color: black;
-  color: white;
-  height: 36px;
-}
 
-#dark svg:not(#cart__svg) {
-  color: white;
-}
-
-#dark {
-  color: white;
-}
-
-#dark p:not(.darkp) {
-  color: white;
-}
-
-#dark .cartp {
-  background-color: black;
-  color: white;
-}
-
+//dark mode h2 tags
 #dark h2:not(#cart__h2) {
   color: white;
 }
-#dark .darkdiv {
+
+//dark mode input tags
+#dark input {
+  color: white;
+  background-color: transparent;
+}
+#dark .dark-input-text-color-black {
+  color: black;
+}
+
+//dark mode div tags
+#dark .dark-div-border {
+  border-bottom: 1px dotted white;
+}
+#dark .dark-div-bg {
   background-color: rgb(51, 48, 48);
+}
+#dark .dark-div-shadow {
   box-shadow: 0px 0px 10px 3px rgba(255, 255, 255, 1);
   -webkit-box-shadow: 0px 0px 10px 3px rgba(255, 255, 255, 1);
   -moz-box-shadow: 0px 0px 10px 3px rgba(255, 255, 255, 1);
 }
-#dark h3 {
-  color: black;
+
+//dark mode select tags
+#dark .dark-select-bg {
+  background-color: black;
 }
-#dark .dark_div_border {
-  border-bottom: 1px dotted white;
+
+#dark select {
+  color: white;
+}
+
+//dark mode option tags
+#dark .dark-option-text-color {
+  color: white;
+}
+#dark option {
+  color: black;
 }

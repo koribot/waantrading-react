@@ -23,8 +23,9 @@ $light-bg-body: rgb(216, 209, 209);
 $sm: 37.5em;
 $md: 48em;
 $lg: 64em;
-$xl: 1026px;
+$xl: 1200px;
 $xxl: 1300px;
+$md-950px: 950px;
 
 //breakpoints
 @mixin breakpoint($point) {
@@ -40,6 +41,16 @@ $xxl: 1300px;
   }
   @if $point == sm {
     @media (max-width: $sm) {
+      @content;
+    }
+  }
+  @if $point == xl {
+    @media (max-width: $xl) {
+      @content;
+    }
+  }
+  @if $point == md-950px {
+    @media (max-width: $md-950px) {
       @content;
     }
   }

@@ -6,7 +6,10 @@
   justify-content: center;
 
   .body__wrapper {
+    display: flex;
+    flex-direction: column;
     width: 1200px;
     padding: 0px 10px;
+    gap: 150px;
   }
 }

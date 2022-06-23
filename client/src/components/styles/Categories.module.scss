@@ -1,0 +1,60 @@
+@import "../../globalStyles/variable.scss";
+
+.categories {
+  display: grid;
+  width: 100%;
+  gap: 100px;
+  grid-template-columns: repeat(2, 400px);
+  justify-content: center;
+
+  @include breakpoint(sm) {
+    display: grid;
+    width: 100%;
+    gap: 100px;
+    grid-template-columns: repeat(1, 100%);
+  }
+
+  @include breakpoint(md-950px) {
+    display: grid;
+    width: 100%;
+    gap: 100px;
+    grid-template-columns: repeat(1, 100%);
+  }
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    width: fit-content;
+    justify-self: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.5s transform;
+    position: relative;
+    &:hover {
+      transition: 0.5s transform;
+      transform: scale(1.02) rotate(0.5deg);
+
+      &::before {
+        content: "";
+        background-color: white;
+        position: absolute;
+        top: 1%;
+        height: 12px;
+        width: 12px;
+        border-radius: 50%;
+        display: flex;
+      }
+    }
+
+    background-color: rgb(163, 206, 192);
+    box-shadow: 1px 5px 4px 0px rgba(0, 0, 0, 0.43);
+    -webkit-box-shadow: 1px 5px 4px 0px rgba(0, 0, 0, 0.43);
+    -moz-box-shadow: 1px 5px 4px 0px rgba(0, 0, 0, 0.43);
+    & > img {
+      object-fit: cover;
+      display: flex;
+      width: 300px;
+      height: 300px;
+    }
+  }
+}

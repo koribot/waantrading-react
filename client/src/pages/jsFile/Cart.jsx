@@ -14,9 +14,11 @@ const Cart = () => {
       <Navbar />
       <div className={styles.content__container}>
         <div className={styles.content__body}>
-          <div className={`${styles.content__body__wrapper} darkdiv`}>
+          <div
+            className={`${styles.content__body__wrapper} dark-div-bg dark-div-shadow`}
+          >
             <div
-              className={`${styles.content__title__container} dark_div_border`}
+              className={`${styles.content__title__container} dark-div-border`}
             >
               <h2 className={styles.content__title__text}>
                 Your Shopping Cart
@@ -62,7 +64,7 @@ const Cart = () => {
               </div>
             </div>
           </div>
-          <div className={`${styles.subtotal} darkdiv`}>
+          <div className={`${styles.subtotal} dark-div-bg dark-div-shadow`}>
             <h2>Subtotal (0): $0</h2>
             <button>Proceed to Checkout</button>
           </div>

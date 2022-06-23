@@ -99,12 +99,12 @@ const Signup = () => {
 
   return (
     <>
-      <div className={styles.arrowBack} onClick={() => route("/")}>
+      {/* <div className={styles.arrowBack} onClick={() => route("/")}>
         <ArrowBackOutlinedIcon
           className={theme === "Dark" ? styles.dark : undefined}
         />
         <span className={theme === "Dark" ? styles.dark : undefined}>Home</span>
-      </div>
+      </div> */}
 
       <div
         className={styles.logform}

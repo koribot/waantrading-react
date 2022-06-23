@@ -3,7 +3,6 @@ import styles from "../styles/Login.module.scss";
 import RemoveRedEyeOutlinedIcon from "@mui/icons-material/RemoveRedEyeOutlined";
 import { useState, useContext } from "react";
 import VisibilityOffOutlinedIcon from "@mui/icons-material/VisibilityOffOutlined";
-import ArrowBackOutlinedIcon from "@mui/icons-material/ArrowBackOutlined";
 import { useNavigate } from "react-router";
 import ThemeContext from "../../helpers/Contexts/Themecontext";
 import { useEffect } from "react";
@@ -46,12 +45,12 @@ const Login = () => {
 
   return (
     <>
-      <div className={styles.arrowBack} onClick={() => route("/")}>
+      {/* <div className={styles.arrowBack} onClick={() => route("/")}>
         <ArrowBackOutlinedIcon
           className={theme === "Dark" ? styles.dark : undefined}
         />
         <span className={theme === "Dark" ? styles.dark : undefined}>Home</span>
-      </div>
+      </div> */}
       <div
         className={styles.logform}
         id={theme === "Dark" ? "dark" : undefined}

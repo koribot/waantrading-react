@@ -80,7 +80,7 @@ const Navbar = ({ mouse }) => {
               </div>
             )}
           </div>
-          <p className="cartp">0</p>
+          <p className="dark-text-color-black">0</p>
         </div>
       </div>
 
@@ -107,13 +107,17 @@ const Navbar = ({ mouse }) => {
             >
               <div className={styles.searchBar__container}>
                 <select
-                  className={styles.searchByCategory}
+                  className={`${styles.searchByCategory} dark-select-bg`}
                   style={{ width: `${width}px` }}
                   onChange={handleclick}
                 >
-                  <option>All</option>
+                  <option className="dark-text-color-white">All</option>
                   {category?.map((item) => {
-                    return <option key={item.id}>{item.name}</option>;
+                    return (
+                      <option key={item.id} className="dark-text-color-white">
+                        {item.name}
+                      </option>
+                    );
                   })}
                 </select>
 
@@ -121,7 +125,10 @@ const Navbar = ({ mouse }) => {
                   onSubmit={(e) => e.preventDefault()}
                   className={styles.form}
                 >
-                  <input className={styles.navbar__searchBar} type="text" />
+                  <input
+                    className={`${styles.navbar__searchBar} dark-input-text-color-black`}
+                    type="text"
+                  />
                 </form>
 
                 <SearchOutlinedIcon

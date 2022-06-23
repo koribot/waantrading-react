@@ -17,6 +17,7 @@ export default function CartModal({ cartModal, setCartModal }) {
   const [price, setPrice] = useState(19.99);
   const style = {
     position: "absolute",
+    zIndex: "2",
     top: "75%",
     right: "0.5%",
     // transform: "translate(-50%, -50%)",
