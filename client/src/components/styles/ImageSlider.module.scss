@@ -71,12 +71,15 @@
 
       // position: absolute;
       &.imagetrans {
-        transition: 0.5s ease;
+        transition: 0.5s run;
         animation-name: run;
         animation-duration: 1s;
         @keyframes run {
           0% {
-            transform: scale(1.5);
+            opacity: 0;
+          }
+          100% {
+            opacity: 1;
           }
         }
       }

@@ -50,7 +50,7 @@ const ImageSlider = () => {
       } else {
         const id = setTimeout(() => {
           setIsButtonNext(false);
-        }, 2000);
+        }, 3000);
 
         return () => window.clearTimeout(id);
       }
@@ -61,7 +61,7 @@ const ImageSlider = () => {
     setShowTransition(true);
     const id = setTimeout(() => {
       setShowTransition(false);
-    }, 1000);
+    }, 3000);
 
     return () => window.clearTimeout(id);
   }, [index]);
