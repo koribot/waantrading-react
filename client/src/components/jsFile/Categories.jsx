@@ -1,5 +1,7 @@
 import React from "react";
+import { useNavigate } from "react-router";
 import styles from "../styles/Categories.module.scss";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const categories = [
   {
@@ -23,16 +25,22 @@ const categories = [
     img: "https://imageio.forbes.com/specials-images/imageserve/615b7a2d10f14c6d90c57d56/Small-appliances-on-a-kitchen-countertop-/960x0.jpg?format=jpg&width=960",
   },
 ];
+
 const Categories = () => {
+  const route = useNavigate();
+  const handleclick = (name) => {
+    route(`/Products:${name}`);
+  };
   return (
     <div className={`${styles.categories}`}>
       {categories.map((item, index) => {
         return (
           <div
             key={item.id}
-            className={`${styles.wrapper} dark-div-bg dark-div-shadow`}
+            className={`${styles.wrapper} dark-div-bg `}
+            onClick={() => handleclick(item.name)}
           >
-            <img src={item.img} alt={item.name} />
+            <LazyLoadImage src={item.img} alt={item.name} />
             <h2>{item.name}</h2>
           </div>
         );

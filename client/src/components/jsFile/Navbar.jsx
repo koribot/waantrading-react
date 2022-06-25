@@ -19,6 +19,7 @@ const Navbar = ({ mouse }) => {
   const [openToggle, setOpenToggle] = useState(false);
   const [cartModal, setCartModal] = useState(false);
   const [user, setUser] = useState(false);
+  const [mouseOver, setMouseOver] = useState(false);
   const route = useNavigate();
 
   const handleclick = (e) => {
@@ -37,14 +38,66 @@ const Navbar = ({ mouse }) => {
     if (data === "Sign up") route("/Sign-up");
   };
 
-  const handleMouseOver = () => {
-    mouse && setCartModal(true);
-    setModal(true);
+  const handleMouseOver = (e) => {
+    const element = document.getElementsByClassName(
+      `${styles.cartModal__container}`
+    )[0];
+    const position = element.getBoundingClientRect();
+    // console.log("div X position", position.x);
+    // console.log("Client X Position", e.clientX);
+    if (mouse) {
+      if (!mouseOver) {
+        if (e.clientX < position.x - 9 || e.clientX > position.x + 9) {
+          const cartContainer = document.getElementsByClassName(
+            `${styles.cartModal__container}`
+          )[0];
+          cartContainer.style.border = "2px solid black";
+          cartContainer.style.backgroundColor = "rgba(255, 254, 254, 0.171)";
+          cartContainer.style.cursor = "pointer";
+          mouse && setCartModal(true);
+          setModal(true);
+          const modalID = document.getElementById("modal");
+          modalID.classList.add("modal");
+          document.body.style.overflow = "hidden";
+          setMouseOver(true);
+        }
+      }
+    }
+  };
+
+  const handleMouseLeave = (e) => {
+    const element = document.getElementsByClassName(
+      `${styles.cartModal__container}`
+    )[0];
+    const position = element.getBoundingClientRect();
+
+    if (mouseOver) {
+      // if (e.clientX > position.x - 50) {
+      const cartContainer = document.getElementsByClassName(
+        `${styles.cartModal__container}`
+      )[0];
+      cartContainer.style.border = "none";
+      cartContainer.style.backgroundColor = "transparent";
+
+      setCartModal(false);
+      setMouseOver(false);
+      const modalID = document.getElementById("modal");
+      modalID.classList.remove("modal");
+      document.body.style.overflow = "auto";
+      // }
+    }
+  };
+
+  const handleCartClick = () => {
+    route("/view-cart");
+    const modalID = document.getElementById("modal");
+    modalID.classList.remove("modal");
+    document.body.style.overflow = "auto";
   };
   return (
     <>
       {/* THEME MODE */}
-      <div className={styles.container}>
+      <div className={`${styles.container} dark-div-bg`}>
         <div className={styles.toggleSwitchIconContainer}>
           <div className={styles.toggleSwitch}>
             <FormGroup>
@@ -67,11 +120,11 @@ const Navbar = ({ mouse }) => {
           <div
             className={styles.cartModal__container}
             onMouseOver={handleMouseOver}
-            onMouseLeave={() => setCartModal(false)}
+            onMouseLeave={handleMouseLeave}
           >
             <ShoppingCartOutlinedIcon
               className={styles.cart__icon}
-              onClick={() => route("/view-cart")}
+              onClick={handleCartClick}
             />
 
             {cartModal && (
@@ -79,14 +132,12 @@ const Navbar = ({ mouse }) => {
                 <CartModal cartModal={cartModal} setCartModal={setCartModal} />
               </div>
             )}
+            <p className="dark-text-color-black">0</p>
           </div>
-          <p className="dark-text-color-black">0</p>
         </div>
       </div>
 
-      <div
-        className={theme === "Light" ? styles.navbar : styles.navbar_darkmode}
-      >
+      <div className={`${styles.navbar} dark-div-bg dark-div-shadow`}>
         {/* SEARCH BAR */}
         <div className={styles.navbar__container}>
           <div className={styles.navbar__list__container}>

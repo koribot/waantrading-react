@@ -25,12 +25,24 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>Waan Trading</title>
-    <style></style>
+    <style>
+      .modal {
+        height: 200vh;
+        position: absolute;
+        top: 45px;
+        z-index: 999999;
+        overflow: hidden;
+        background-color: rgba(0, 0, 0, 0.432);
+        width: 100%;
+        transition: 0.1s ease-in;
+      }
+    </style>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-
+    <div id="modal"></div>
     <div id="root" class="rootmain"></div>
+
     <!-- <div id="modal" class="rootmain"></div> -->
 
     <!--

@@ -44,24 +44,22 @@ const Login = () => {
   };
 
   return (
-    <>
+    <div className={styles.login} id={theme === "Dark" ? "dark" : "light"}>
       {/* <div className={styles.arrowBack} onClick={() => route("/")}>
         <ArrowBackOutlinedIcon
           className={theme === "Dark" ? styles.dark : undefined}
         />
         <span className={theme === "Dark" ? styles.dark : undefined}>Home</span>
       </div> */}
-      <div
-        className={styles.logform}
-        id={theme === "Dark" ? "dark" : undefined}
-      >
-        <div className={styles.topContainer}>
-          <h2>Login to your account</h2>
+      <div className={`${styles.logform} dark-div-bg dark-div-shadow`}>
+        <div className={`${styles.topContainer} dark-div-bg dark-div-shadow`}>
+          <h2 className="dark-div-bg">Login to your account</h2>
         </div>
         <form
           onSubmit={(e) => {
             console.log("Submit");
           }}
+          className="border-none"
         >
           <input
             type="text"
@@ -93,7 +91,9 @@ const Login = () => {
             Login
           </button>
         </form>
-        <div className={styles.option__container}>
+        <div
+          className={`${styles.option__container} dark-div-bg dark-div-shadow border-none`}
+        >
           <a className={styles.forgot} href="/Sign-up">
             Create Account
           </a>
@@ -102,7 +102,7 @@ const Login = () => {
           </a>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

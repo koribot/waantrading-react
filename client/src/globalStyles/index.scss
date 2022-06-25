@@ -24,34 +24,65 @@
 
 body {
   font-family: $font-Inter;
-  overflow-x: hidden;
 }
 
-//light mode
-#light {
+html #light {
   background-color: $light-bg-body;
   transition: 0.3s background-color;
 }
+html #dark {
+  background-color: $dark-bg-body;
+  transition: 0.3s background-color;
+}
+
+//light mode
 
 //light mode button tags
 #light button {
   &:enabled {
-    color: white;
+    display: inline-block;
+    // background: rgba(0, 0, 255, 0.575);
     background-color: $light-bg;
+    border: 1px solid darken($light-bg, 5%);
+    padding: 0.5em 2em;
+    color: white;
+    margin-right: 0.5em;
+    box-shadow: inset 0px 1px 0px fadeout(white, 80%);
+  }
+  &:hover {
+    background: lighten($light-bg, 5%);
+    cursor: pointer;
+  }
+  &:active {
+    background: $light-bg;
+    box-shadow: inset 0px 1px 1px fadeout(black, 90%);
+  }
+  &:focus {
+    outline: none;
+  }
+
+  &:disabled {
+    display: inline-block;
+    // background: rgba(0, 0, 255, 0.144);
+    border: 1px solid darken(rgb(255, 255, 255), 5%);
+    padding: 0.5em 2em;
+    color: gray;
+    background-color: darken($light-bg, 20%);
     border: none;
+    margin-right: 0.5em;
+    box-shadow: inset 0px 1px 0px fadeout(white, 80%);
+
+    &:hover {
+      cursor: not-allowed;
+    }
   }
 }
-#light button[disabled] {
-  color: gray;
-  background-color: darken($light-bg, 20%);
-  border: none;
+
+.input-color-white {
+  background-color: aqua;
 }
 
 //darkmode
-#dark {
-  background-color: black;
-  transition: 0.3s background-color;
-}
 
 #dark .dark-text-color-black {
   color: black;
@@ -63,7 +94,10 @@ body {
 //dark mode a tags
 #dark a {
   color: white;
-  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 //dark mode label tags
@@ -94,16 +128,48 @@ body {
 //dark mode button tags
 #dark button {
   &:enabled {
-    color: white;
+    display: inline-block;
+    // background: rgba(0, 0, 255, 0.575);
     background-color: $light-bg;
+    border: 1px solid darken($light-bg, 5%);
+    padding: 0.5em 2em;
+    color: white;
+    margin-right: 0.5em;
+    box-shadow: inset 0px 1px 0px fadeout(white, 80%);
+  }
+  &:hover {
+    background: lighten($light-bg, 5%);
+    cursor: pointer;
+  }
+  &:active {
+    background: $light-bg;
+    box-shadow: inset 0px 1px 1px fadeout(black, 90%);
+  }
+  &:focus {
+    outline: none;
+  }
+
+  &:disabled {
+    display: inline-block;
+    // background: rgba(0, 0, 255, 0.144);
+    border: 1px solid darken(rgb(255, 255, 255), 5%);
+    padding: 0.5em 2em;
+    color: gray;
+    background-color: darken($light-bg, 20%);
     border: none;
+    margin-right: 0.5em;
+    box-shadow: inset 0px 1px 0px fadeout(white, 80%);
+
+    &:hover {
+      cursor: not-allowed;
+    }
   }
 }
-#dark button[disabled] {
-  color: gray;
-  background-color: darken($light-bg, 20%);
-  border: none;
-}
+// #dark button[disabled] {
+//   color: gray;
+//   background-color: darken($light-bg, 20%);
+//   border: none;
+// }
 
 //dark mode h2 tags
 #dark h2:not(#cart__h2) {
@@ -128,8 +194,11 @@ body {
 }
 #dark .dark-div-shadow {
   box-shadow: 0px 0px 10px 3px rgba(255, 255, 255, 1);
-  -webkit-box-shadow: 0px 0px 10px 3px rgba(255, 255, 255, 1);
+  -webkit-box-shadow: 0px 0px 1px 0.5px rgba(255, 255, 255, 1);
   -moz-box-shadow: 0px 0px 10px 3px rgba(255, 255, 255, 1);
+}
+#dark .dark-div-border-btm {
+  border-bottom: 1px solid white;
 }
 
 //dark mode select tags
@@ -147,4 +216,8 @@ body {
 }
 #dark option {
   color: black;
+}
+
+#dark .border-none {
+  border: none;
 }

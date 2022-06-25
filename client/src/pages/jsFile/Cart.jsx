@@ -14,9 +14,7 @@ const Cart = () => {
       <Navbar />
       <div className={styles.content__container}>
         <div className={styles.content__body}>
-          <div
-            className={`${styles.content__body__wrapper} dark-div-bg dark-div-shadow`}
-          >
+          <div className={`${styles.content__body__wrapper} dark-div-bg`}>
             <div
               className={`${styles.content__title__container} dark-div-border`}
             >

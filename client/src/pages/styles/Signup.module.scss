@@ -1,7 +1,20 @@
 @import "../../globalStyles/variable.scss";
 
-@import "../../globalStyles/variable.scss";
-
+.sign__up {
+  width: 100%;
+  padding: 10px;
+  min-height: 100vh;
+  position: relative;
+  display: grid;
+  place-items: center;
+  @include breakpoint(sm) {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
 .arrowBack {
   display: flex;
   align-items: center;
@@ -29,15 +42,21 @@
 
   @include breakpoint(sm) {
     position: relative;
-    margin: 20% auto 0 auto;
+    margin: 0% auto 0 auto;
+    //margin: 20% auto 0 auto;
     left: 0%;
+    //left: 50%;
+    // top: 0;
+    // left: 0;
     min-width: 300px;
-    max-width: 350px;
+    max-width: 300px;
+    width: 100%;
     -webkit-transform: translate(0%, 0%);
     -moz-transform: translate(0%, 0%);
     -o-transform: translate(0%, 0%);
     -ms-transform: translate(0%, 0%);
     transform: translate(0%, 0%);
+    height: fit-content;
   }
 
   form {
@@ -125,6 +144,11 @@
     //text-shadow: 0px 1px 1px darken(@grey, 5%);
     margin: 0;
     font-weight: 200;
+    white-space: nowrap;
+
+    @include breakpoint(sm) {
+      font-size: 1em;
+    }
   }
 
   input {
@@ -142,42 +166,42 @@
     }
   }
 
-  .btn {
-    &:enabled {
-      display: inline-block;
-      background: $btnBg;
-      border: 1px solid darken(blue, 5%);
-      padding: 0.5em 2em;
-      color: white;
-      margin-right: 0.5em;
-      box-shadow: inset 0px 1px 0px fadeout(white, 80%);
-      &:hover {
-        background: lighten(blue, 5%);
-        cursor: pointer;
-      }
-      &:active {
-        background: blue;
-        box-shadow: inset 0px 1px 1px fadeout(black, 90%);
-      }
-      &:focus {
-        outline: none;
-      }
-    }
+  // .btn {
+  //   &:enabled {
+  //     display: inline-block;
+  //     background: $btnBg;
+  //     border: 1px solid darken(blue, 5%);
+  //     padding: 0.5em 2em;
+  //     color: white;
+  //     margin-right: 0.5em;
+  //     box-shadow: inset 0px 1px 0px fadeout(white, 80%);
+  //     &:hover {
+  //       background: lighten(blue, 5%);
+  //       cursor: pointer;
+  //     }
+  //     &:active {
+  //       background: blue;
+  //       box-shadow: inset 0px 1px 1px fadeout(black, 90%);
+  //     }
+  //     &:focus {
+  //       outline: none;
+  //     }
+  //   }
 
-    &:disabled {
-      display: inline-block;
-      background: rgba(0, 0, 255, 0.144);
-      border: 1px solid darken(rgb(255, 255, 255), 5%);
-      padding: 0.5em 2em;
-      color: white;
-      margin-right: 0.5em;
-      box-shadow: inset 0px 1px 0px fadeout(white, 80%);
+  //   &:disabled {
+  //     display: inline-block;
+  //     background: rgba(0, 0, 255, 0.144);
+  //     border: 1px solid darken(rgb(255, 255, 255), 5%);
+  //     padding: 0.5em 2em;
+  //     color: white;
+  //     margin-right: 0.5em;
+  //     box-shadow: inset 0px 1px 0px fadeout(white, 80%);
 
-      &:hover {
-        cursor: not-allowed;
-      }
-    }
-  }
+  //     &:hover {
+  //       cursor: not-allowed;
+  //     }
+  //   }
+  // }
 
   .forgot {
     color: black;

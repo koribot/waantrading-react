@@ -13,6 +13,7 @@ import { useEffect } from "react";
 import styles from "../styles/ImageSlider.module.scss";
 import PauseCircleOutlineIcon from "@mui/icons-material/PauseCircleOutline";
 import PlayCircleOutlineIcon from "@mui/icons-material/PlayCircleOutline";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const MyCollection = [
   {
@@ -34,8 +35,6 @@ const ImageSlider = () => {
   const theme = useTheme();
   const [index, setActiveStep] = useState(0);
   const [transition, setShowTransition] = useState(false);
-  const [addClasslist, setAddClasslist] = useState(false);
-  const image = document.getElementById("image");
   const [isButtonNext, setIsButtonNext] = useState(false);
   const [isPlay, setIsPlay] = useState(true);
 
@@ -72,6 +71,7 @@ const ImageSlider = () => {
     setShowTransition(false);
     setActiveStep((i) => (i < MyCollection.length - 1 ? i + 1 : 0));
   };
+
   const goToPrevious = () => {
     setIsButtonNext(true);
     setShowTransition(false);
@@ -79,7 +79,7 @@ const ImageSlider = () => {
   };
 
   return (
-    <div className={`${styles.container} dark-div-bg dark-div-shadow`}>
+    <div className={`${styles.container} dark-div-bg`}>
       <Paper elevation={10} square className={`${styles.header} dark-div-bg`}>
         <Typography className={styles.title}>Products</Typography>
       </Paper>
@@ -97,7 +97,7 @@ const ImageSlider = () => {
             />
           )}
 
-          <img
+          <LazyLoadImage
             src={MyCollection[index].imgPath}
             alt={MyCollection[index].label}
             id="image"

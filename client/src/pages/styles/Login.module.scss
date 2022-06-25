@@ -11,6 +11,22 @@
     color: white;
   }
 }
+
+.login {
+  width: 100%;
+  padding: 10px;
+  min-height: 100vh;
+  position: relative;
+  display: grid;
+  place-items: center;
+  @include breakpoint(sm) {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
 .logform {
   min-width: 320px;
   max-width: 475px;
@@ -30,7 +46,7 @@
   }
   @include breakpoint(sm) {
     position: relative;
-    margin: 20% auto 0 auto;
+    margin: 0% auto 0 auto;
     left: 0%;
     min-width: 300px;
     max-width: 350px;
@@ -63,6 +79,7 @@
   }
 
   h2 {
+    white-space: nowrap;
     color: black;
     border-left: none;
     font-size: 1.35em;
@@ -76,6 +93,10 @@
     //text-shadow: 0px 1px 1px darken(@grey, 5%);
     margin: 0;
     font-weight: 200;
+
+    @include breakpoint(sm) {
+      font-size: 1em;
+    }
   }
 
   input {
@@ -93,43 +114,43 @@
     }
   }
 
-  .btn {
-    &:enabled {
-      display: inline-block;
-      // background: rgba(0, 0, 255, 0.575);
-      background: $btnBg;
-      border: 1px solid darken(blue, 5%);
-      padding: 0.5em 2em;
-      color: white;
-      margin-right: 0.5em;
-      box-shadow: inset 0px 1px 0px fadeout(white, 80%);
-    }
-    &:hover {
-      background: lighten(blue, 5%);
-      cursor: pointer;
-    }
-    &:active {
-      background: blue;
-      box-shadow: inset 0px 1px 1px fadeout(black, 90%);
-    }
-    &:focus {
-      outline: none;
-    }
+  // .btn {
+  //   &:enabled {
+  //     display: inline-block;
+  //     // background: rgba(0, 0, 255, 0.575);
+  //     background-color: $btnBg;
+  //     border: 1px solid darken(blue, 5%);
+  //     padding: 0.5em 2em;
+  //     color: white;
+  //     margin-right: 0.5em;
+  //     box-shadow: inset 0px 1px 0px fadeout(white, 80%);
+  //   }
+  //   &:hover {
+  //     background: lighten(blue, 5%);
+  //     cursor: pointer;
+  //   }
+  //   &:active {
+  //     background: blue;
+  //     box-shadow: inset 0px 1px 1px fadeout(black, 90%);
+  //   }
+  //   &:focus {
+  //     outline: none;
+  //   }
 
-    &:disabled {
-      display: inline-block;
-      background: rgba(0, 0, 255, 0.144);
-      border: 1px solid darken(rgb(255, 255, 255), 5%);
-      padding: 0.5em 2em;
-      color: white;
-      margin-right: 0.5em;
-      box-shadow: inset 0px 1px 0px fadeout(white, 80%);
+  //   &:disabled {
+  //     display: inline-block;
+  //     background: rgba(0, 0, 255, 0.144);
+  //     border: 1px solid darken(rgb(255, 255, 255), 5%);
+  //     padding: 0.5em 2em;
+  //     color: white;
+  //     margin-right: 0.5em;
+  //     box-shadow: inset 0px 1px 0px fadeout(white, 80%);
 
-      &:hover {
-        cursor: not-allowed;
-      }
-    }
-  }
+  //     &:hover {
+  //       cursor: not-allowed;
+  //     }
+  //   }
+  // }
 
   .forgot {
     color: black;

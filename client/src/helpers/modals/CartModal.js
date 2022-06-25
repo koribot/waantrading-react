@@ -9,6 +9,7 @@ import { useState, useEffect } from "react";
 import ReactDOM from "react-dom/client";
 import Modal from "@mui/material/Modal";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import { createPortal } from "react-dom";
 
 export default function CartModal({ cartModal, setCartModal }) {
   const [open, setOpen] = useState(cartModal);
@@ -16,10 +17,8 @@ export default function CartModal({ cartModal, setCartModal }) {
   const [qty, setQty] = useState(1);
   const [price, setPrice] = useState(19.99);
   const style = {
-    position: "absolute",
-    zIndex: "2",
-    top: "75%",
-    right: "0.5%",
+    // top: "75%",
+
     // transform: "translate(-50%, -50%)",
     // width: "fit-content",
     minWidth: 400,
@@ -49,11 +48,19 @@ export default function CartModal({ cartModal, setCartModal }) {
     //minimumFractionDigits: 0, // (this suffices for whole numbers, but will print 2500.10 as $2,500.1)
     //maximumFractionDigits: 0, // (causes 2500.99 to be printed as $2,501)
   });
+  // const handleMouseLeave = () => {
+  //   setCartModal(false);
 
-  // const modal = ReactDOM.createRoot(document.getElementById("modal"));
-
-  return (
-    <div className={styles.container} id={theme === "Light" ? "light" : "dark"}>
+  //   const modalID = document.getElementById("modal");
+  //   modalID.classList.remove("modal");
+  //   document.body.style.overflow = "auto";
+  // };
+  return createPortal(
+    <div
+      className={styles.cartModal}
+      id={theme === "Light" ? "light" : "dark"}
+      // onMouseLeave={handleMouseLeave}
+    >
       <div>
         <div style={style} className={styles.box}>
           {/* <Close onClick={handleClose} sx={style2} /> */}
@@ -141,6 +148,7 @@ export default function CartModal({ cartModal, setCartModal }) {
           </div>
         </div>
       </div>
-    </div>
+    </div>,
+    document.getElementById("modal")
   );
 }

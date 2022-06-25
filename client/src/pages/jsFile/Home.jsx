@@ -11,7 +11,7 @@ const Home = () => {
   return (
     <div id={theme === "Light" ? "light" : "dark"} className="home__container">
       <Navbar mouse={true} />
-      <Body />
+      <Body show={"main"} />
       <Footer />
     </div>
   );

@@ -1,11 +1,19 @@
 @import "../../globalStyles/variable.scss";
+
+.cartModal {
+  display: flex;
+
+  height: 0;
+  position: fixed;
+  top: 45px;
+  right: 0.3%;
+}
 .box {
   &::-webkit-scrollbar {
     display: none;
   }
   overflow-y: scroll;
   max-height: 300px;
-  position: fixed;
 }
 .closeModal {
   cursor: pointer;

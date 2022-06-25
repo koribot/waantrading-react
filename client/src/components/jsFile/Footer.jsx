@@ -6,7 +6,7 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 const Footer = () => {
   return (
     <>
-      <div className={styles.footer}>
+      <div className={`${styles.footer} dark-div-bg dark-div-shadow`}>
         <div className={styles.footer__wrapper}>
           <div className={styles.fotter__content__container}>
             <div className={styles.footer__content__1}>

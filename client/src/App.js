@@ -7,14 +7,15 @@ import Signup from "./pages/jsFile/Signup";
 import Cart from "./pages/jsFile/Cart";
 import ThemeContext from "./helpers/Contexts/Themecontext";
 import "./globalStyles/App.css";
+import ProductLists from "./pages/jsFile/ProductLists";
 function App() {
   const { theme, modal } = useContext(ThemeContext);
 
-  useEffect(() => {
-    theme === "Dark"
-      ? (document.body.style.backgroundColor = "black")
-      : (document.body.style.backgroundColor = "rgb(216, 209, 209)");
-  }, [theme]);
+  // useEffect(() => {
+  //   theme === "Dark"
+  //     ? (document.body.style.backgroundColor = "black")
+  //     : (document.body.style.backgroundColor = "rgb(216, 209, 209)");
+  // }, [theme]);
 
   return (
     <Router>
@@ -24,6 +25,7 @@ function App() {
         <Route path="/Log-in" element={<Login />} />
         <Route path="/View-cart" element={<Cart />} />
         <Route path="/Sign-up" element={<Signup />} />
+        <Route path="/Products:id" element={<ProductLists />} />
       </Routes>
     </Router>
   );
