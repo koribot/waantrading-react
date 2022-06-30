@@ -3,7 +3,6 @@
 .cartModal {
   display: flex;
 
-  height: 0;
   position: fixed;
   top: 45px;
   right: 0.3%;
@@ -13,7 +12,7 @@
     display: none;
   }
   overflow-y: scroll;
-  max-height: 300px;
+  max-height: 400px;
 }
 .closeModal {
   cursor: pointer;
@@ -62,7 +61,7 @@
     display: flex;
     padding: 20px;
     width: 100%;
-
+    gap: 10px;
     & > img {
       flex: 0.9;
       width: 100px;

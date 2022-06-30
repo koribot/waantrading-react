@@ -14,6 +14,7 @@ import styles from "../styles/ImageSlider.module.scss";
 import PauseCircleOutlineIcon from "@mui/icons-material/PauseCircleOutline";
 import PlayCircleOutlineIcon from "@mui/icons-material/PlayCircleOutline";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import KeyboardArrowLeft from "@mui/icons-material/KeyboardArrowLeft";
 
 const MyCollection = [
   {
@@ -32,117 +33,88 @@ const MyCollection = [
 
 const ImageSlider = () => {
   const CollectionSize = MyCollection.length;
-  const theme = useTheme();
-  const [index, setActiveStep] = useState(0);
-  const [transition, setShowTransition] = useState(false);
-  const [isButtonNext, setIsButtonNext] = useState(false);
+  const [isActiveSlide, setIsActiveSlide] = useState(true);
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isNextPictureClick, setIsNextPictureClick] = useState(true);
+  const [isButtonClick, setIsButtonClick] = useState(false);
   const [isPlay, setIsPlay] = useState(true);
 
-  //increment index,
   useEffect(() => {
     if (isPlay) {
-      if (!isButtonNext) {
+      if (!isButtonClick) {
         const id = setInterval(() => {
-          setActiveStep((i) => (i < MyCollection.length - 1 ? i + 1 : 0));
+          setIsNextPictureClick(true);
+          setCurrentSlide((i) => (i < MyCollection.length - 1 ? i + 1 : 0));
         }, 8000);
 
-        return () => window.clearInterval(id);
+        return () => clearInterval(id);
       } else {
-        const id = setTimeout(() => {
-          setIsButtonNext(false);
-        }, 3000);
-
-        return () => window.clearTimeout(id);
+        const id2 = setTimeout(() => {
+          setIsButtonClick(false);
+        }, 1000);
+        return () => clearInterval(id2);
       }
     }
-  }, [isButtonNext, isPlay]);
-
-  useEffect(() => {
-    setShowTransition(true);
-    const id = setTimeout(() => {
-      setShowTransition(false);
-    }, 3000);
-
-    return () => window.clearTimeout(id);
-  }, [index]);
+  }, [isButtonClick, isPlay]);
 
   const goToNextPicture = (e) => {
-    setIsButtonNext(true);
-    setShowTransition(false);
-    setActiveStep((i) => (i < MyCollection.length - 1 ? i + 1 : 0));
+    // const data = document.querySelector("[data-active]");
+    // data.dataset.active = true;
+    setIsNextPictureClick(true);
+    setIsButtonClick(true);
+    setCurrentSlide((i) => (i < CollectionSize - 1 ? i + 1 : 0));
   };
 
   const goToPrevious = () => {
-    setIsButtonNext(true);
-    setShowTransition(false);
-    setActiveStep((i) => (i > 0 ? i - 1 : MyCollection.length - 1));
+    // const activeSlide = document.querySelector("[data-active]");
+    // setIsActiveSlide(true);
+    setIsButtonClick(true);
+    setIsNextPictureClick(false);
+    setCurrentSlide((i) => (i > 0 ? i - 1 : CollectionSize - 1));
   };
 
   return (
-    <div className={`${styles.container} dark-div-bg`}>
-      <Paper elevation={10} square className={`${styles.header} dark-div-bg`}>
-        <Typography className={styles.title}>Products</Typography>
-      </Paper>
-      <Step>
-        <div className={styles.image__container}>
-          {isPlay ? (
-            <PauseCircleOutlineIcon
-              className={styles.pause__icon}
-              onClick={() => setIsPlay(!isPlay)}
-            />
-          ) : (
-            <PlayCircleOutlineIcon
-              className={styles.pause__icon}
-              onClick={() => setIsPlay(!isPlay)}
-            />
-          )}
-
-          <LazyLoadImage
-            src={MyCollection[index].imgPath}
-            alt={MyCollection[index].label}
-            id="image"
-            className={`${styles.default__image} ${
-              transition ? styles.imagetrans : undefined
-            }`}
+    <section className={`${styles.container} dark-div-bg`}>
+      <div className={styles.image__wrapper}>
+        <KeyboardArrowLeft
+          className={styles.left__arrow}
+          onClick={goToPrevious}
+        />
+        <KeyboardArrowRightIcon
+          className={styles.right__arrow}
+          onClick={goToNextPicture}
+        />
+        {isPlay ? (
+          <PauseCircleOutlineIcon
+            onClick={() => setIsPlay(!isPlay)}
+            className={styles.play__icon}
           />
-        </div>
-      </Step>
-      <MobileStepper
-        variant="dots"
-        position="static"
-        index={index}
-        steps={CollectionSize}
-        activeStep={index}
-        elevation={10}
-        className={`${styles.stepper} dark-div-bg`}
-        nextButton={
-          <Button
-            size="small"
-            onClick={goToNextPicture}
-            //   disabled={index === CollectionSize - 1}
-          >
-            {theme.direction !== "rtl" ? (
-              <KeyboardArrowRightIcon />
-            ) : (
-              <KeyboardArrowLeftIcon />
-            )}
-          </Button>
-        }
-        backButton={
-          <Button
-            size="small"
-            onClick={goToPrevious}
-            //   disabled={index === CollectionSize + 1}
-          >
-            {theme.direction !== "ltr" ? (
-              <KeyboardArrowRightIcon />
-            ) : (
-              <KeyboardArrowLeftIcon />
-            )}
-          </Button>
-        }
-      />
-    </div>
+        ) : (
+          <PlayCircleOutlineIcon
+            onClick={() => setIsPlay(!isPlay)}
+            className={styles.play__icon}
+          />
+        )}
+        <ul>
+          {MyCollection.map((item, i) => {
+            return (
+              <li
+                key={i}
+                className={
+                  i === currentSlide
+                    ? isNextPictureClick
+                      ? `${styles.slide} ${styles.current__slide__right}`
+                      : `${styles.slide} ${styles.current__slide__left}`
+                    : styles.slide
+                }
+              >
+                {i === currentSlide && <LazyLoadImage src={item.imgPath} />}
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+    </section>
   );
 };
 

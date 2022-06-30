@@ -1,0 +1,191 @@
+@import "../../globalStyles/variable.scss";
+
+.productlists {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  z-index: 1;
+  .main__wrapper {
+    display: flex;
+    width: 1200px;
+    padding: 10px;
+    gap: 10px;
+    .search__filter {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      margin-top: 50px;
+      gap: 50px;
+      .search__filter__title {
+      }
+      .search__filter__methods {
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+        .sub__categories__method {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+
+          & > div {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            & > div {
+              display: flex;
+              padding-left: 20px;
+              align-items: center;
+              gap: 10px;
+              & > input[type="checkbox"] {
+                transform: scale(1.5);
+
+                &:hover {
+                  cursor: pointer;
+                }
+              }
+              & > label {
+              }
+            }
+          }
+        }
+
+        .price__range__method {
+          display: flex;
+          flex-direction: column;
+          gap: 15px;
+          & > div {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            & > div {
+              display: flex;
+
+              & > input {
+                width: 60px;
+              }
+            }
+            .apply__button {
+              width: 150px;
+            }
+          }
+        }
+
+        .buy__format__method {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          & > div {
+            display: flex;
+            flex-direction: column;
+            padding-left: 20px;
+            gap: 5px;
+
+            & > div {
+              display: flex;
+              align-items: center;
+              gap: 10px;
+              & > input[type="checkbox"] {
+                transform: scale(1.5);
+              }
+            }
+          }
+        }
+      }
+    }
+    .left__side {
+      display: flex;
+      flex-direction: column;
+
+      flex: 5;
+      .sort__by {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 50px;
+        width: 100%;
+        padding: 20px;
+        margin-top: 50px;
+        background-color: rgba(0, 0, 0, 0.055);
+        border-radius: 10px;
+        height: 50px;
+        & > div {
+          display: flex;
+          align-items: center;
+        }
+      }
+      .content__container {
+        margin-top: 10px;
+        min-height: 100vh;
+        padding: 20px;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(4, auto);
+        justify-content: center;
+        grid-template-rows: 250px 250px;
+        align-items: flex-start;
+        gap: 50px;
+        row-gap: 60px;
+
+        @include breakpoint(xl) {
+          display: grid;
+          width: 100%;
+          gap: 50px;
+          grid-template-columns: repeat(3, 250px);
+        }
+        @include breakpoint(md_900px) {
+          display: grid;
+          width: 100%;
+          gap: 50px;
+          grid-template-columns: repeat(2, 250px);
+        }
+        @include breakpoint(sm) {
+          display: grid;
+          width: 100%;
+          gap: 50px;
+          grid-template-columns: repeat(1, 250px);
+        }
+
+        .wrapper {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-self: center;
+          align-self: center;
+          text-align: center;
+          text-decoration: none;
+          color: black;
+
+          background-color: rgb(163, 206, 192);
+          box-shadow: 1px 5px 4px 0px rgba(0, 0, 0, 0.43);
+          -webkit-box-shadow: 1px 5px 4px 0px rgba(0, 0, 0, 0.43);
+          -moz-box-shadow: 1px 5px 4px 0px rgba(0, 0, 0, 0.43);
+          transition: 0.5s transform;
+          &:hover {
+            transition: 0.5s transform;
+            transform: scale(1.02);
+            // rotate(0.5deg)
+            // &::before {
+            //   content: "";
+            //   background-color: white;
+            //   position: absolute;
+            //   top: 1%;
+            //   height: 12px;
+            //   width: 12px;
+            //   border-radius: 50%;
+            //   display: flex;
+            // }
+          }
+          & > div {
+            padding: 10px;
+            & > img {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}

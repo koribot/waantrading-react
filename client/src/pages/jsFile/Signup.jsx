@@ -157,6 +157,7 @@ const Signup = () => {
               placeholder="Password"
               required
               minLength={8}
+              autoComplete="on"
             />
 
             <span onClick={() => setShowPassword(!showPassword)}>

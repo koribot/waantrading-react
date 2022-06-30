@@ -26,7 +26,7 @@ export default function CartModal({ cartModal, setCartModal }) {
     border: "2px solid #000",
     boxShadow: 24,
     p: 4,
-    minHeight: 400,
+
     overflowY: "auto",
     trasition: "0.5s ease",
   };
@@ -66,7 +66,7 @@ export default function CartModal({ cartModal, setCartModal }) {
           {/* <Close onClick={handleClose} sx={style2} /> */}
           <div className={styles.top__container}>
             <h3 className={styles.cart__text}>Your Cart: {qty}</h3>
-            <p className={`${styles.total__text} darkp`}>
+            <p className={`${styles.total__text} dark-text-color-black`}>
               Total Amount: {formatter.format(qty * price)}
             </p>
           </div>
@@ -88,13 +88,13 @@ export default function CartModal({ cartModal, setCartModal }) {
                 />
               </div>
               <div className={styles.price__container}>
-                <p className="darkp">${price}</p>
+                <p className="dark-text-color-black">${price}</p>
               </div>
               <div className={styles.price__container}>
                 <button>Remove</button>
               </div>
             </div>
-            <div className={styles.container}>
+            {/* <div className={styles.container}>
               <LazyLoadImage
                 src="https://i.ebayimg.com/images/g/UdYAAOSwnJph4rEG/s-l500.png"
                 alt="title"
@@ -116,8 +116,8 @@ export default function CartModal({ cartModal, setCartModal }) {
               <div className={styles.price__container}>
                 <button>Remove</button>
               </div>
-            </div>
-            <div className={styles.container}>
+            </div> */}
+            {/* <div className={styles.container}>
               <LazyLoadImage
                 src="https://i.ebayimg.com/images/g/UdYAAOSwnJph4rEG/s-l500.png"
                 alt="title"
@@ -139,7 +139,7 @@ export default function CartModal({ cartModal, setCartModal }) {
               <div className={styles.price__container}>
                 <button>Remove</button>
               </div>
-            </div>
+            </div> */}
           </div>
           <div className={styles.checkout__button__container}>
             <button className={styles.checkout__btn}>

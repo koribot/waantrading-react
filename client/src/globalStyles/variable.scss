@@ -26,8 +26,8 @@ $md: 48em;
 $lg: 64em;
 $xl: 1200px;
 $xxl: 1300px;
-$md-950px: 950px;
-
+$md_950px: 950px;
+$md_900px: 900px;
 //breakpoints
 @mixin breakpoint($point) {
   @if $point == md {
@@ -50,8 +50,13 @@ $md-950px: 950px;
       @content;
     }
   }
-  @if $point == md-950px {
-    @media (max-width: $md-950px) {
+  @if $point == md_950px {
+    @media (max-width: $md_950px) {
+      @content;
+    }
+  }
+  @if $point == md_900px {
+    @media (max-width: $md_900px) {
       @content;
     }
   }

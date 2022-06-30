@@ -12,7 +12,20 @@ const Body = ({ show, content }) => {
             <Categories />
           </>
         )}
-        {show === "categories" && <p>{content}</p>}
+        {/* {show === "categories" && (
+          <div>
+            <div>
+              {content?.map((item) => {
+                return (
+                  <>
+                    <p key={item.id}>{content.id}</p>
+                    <img src={item.img} alt={item.id} width="100px" />
+                  </>
+                );
+              })}
+            </div>
+          </div>
+        )} */}
       </div>
     </div>
   );

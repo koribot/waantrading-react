@@ -130,19 +130,21 @@ html #dark {
   &:enabled {
     display: inline-block;
     // background: rgba(0, 0, 255, 0.575);
-    background-color: $light-bg;
-    border: 1px solid darken($light-bg, 5%);
+    // background-color: $light-bg;
+    background-color: rgb(49, 46, 46);
+    border: 1px solid darken(rgb(49, 46, 46), 5%);
     padding: 0.5em 2em;
     color: white;
     margin-right: 0.5em;
     box-shadow: inset 0px 1px 0px fadeout(white, 80%);
   }
   &:hover {
-    background: lighten($light-bg, 5%);
+    // background: lighten($light-bg, 5%);
+    background: lighten(rgb(51, 48, 48), 5%);
     cursor: pointer;
   }
   &:active {
-    background: $light-bg;
+    background: rgb(49, 46, 46);
     box-shadow: inset 0px 1px 1px fadeout(black, 90%);
   }
   &:focus {
@@ -154,8 +156,10 @@ html #dark {
     // background: rgba(0, 0, 255, 0.144);
     border: 1px solid darken(rgb(255, 255, 255), 5%);
     padding: 0.5em 2em;
-    color: gray;
-    background-color: darken($light-bg, 20%);
+    color: rgba(128, 128, 128, 0.247);
+    // background-color: darken($light-bg, 20%);
+    background-color: darken(rgb(49, 46, 46), 10%);
+
     border: none;
     margin-right: 0.5em;
     box-shadow: inset 0px 1px 0px fadeout(white, 80%);
