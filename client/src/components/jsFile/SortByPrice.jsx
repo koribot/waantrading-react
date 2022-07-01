@@ -3,7 +3,7 @@ import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
-
+import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 export default function SortByPrice({ handleChange, sortPrice }) {
   return (
     <div>

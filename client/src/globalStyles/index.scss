@@ -27,7 +27,8 @@ body {
 }
 
 html #light {
-  background-color: $light-bg-body;
+  background-color: $light-bg-body2;
+  // background-color: $light-bg-body;
   transition: 0.3s background-color;
 }
 html #dark {
@@ -132,7 +133,7 @@ html #dark {
     // background: rgba(0, 0, 255, 0.575);
     // background-color: $light-bg;
     background-color: rgb(49, 46, 46);
-    border: 1px solid darken(rgb(49, 46, 46), 5%);
+    border: 1px solid darken(rgb(255, 251, 251), 5%);
     padding: 0.5em 2em;
     color: white;
     margin-right: 0.5em;
@@ -205,11 +206,15 @@ html #dark {
   border-bottom: 1px solid white;
 }
 
+//dark mode h4 tags
+#dark h4 {
+  color: white;
+}
+
 //dark mode select tags
 #dark .dark-select-bg {
   background-color: black;
 }
-
 #dark select {
   color: white;
 }

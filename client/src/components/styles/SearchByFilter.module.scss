@@ -1,0 +1,103 @@
+@import "../../globalStyles/variable.scss";
+.search__filter {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin-top: 50px;
+  gap: 50px;
+
+  @include breakpoint(xl) {
+    display: none;
+  }
+  .search__filter__title {
+  }
+  .search__filter__methods {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    .sub__categories__method {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      & > div {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        & > div {
+          display: flex;
+          padding-left: 20px;
+          align-items: center;
+          gap: 10px;
+          & > input[type="checkbox"] {
+            transform: scale(1.5);
+
+            &:hover {
+              cursor: pointer;
+            }
+          }
+          & > label {
+          }
+        }
+      }
+    }
+
+    .price__range__method {
+      display: flex;
+      flex-direction: column;
+
+      gap: 15px;
+      & > div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 10px;
+        & > div {
+          display: flex;
+          flex-direction: column;
+          width: 150px;
+          gap: 10px;
+          & > div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            & > input {
+              width: 100%;
+              height: 30px;
+
+              &:focus {
+                outline: none;
+              }
+            }
+          }
+          .apply__button {
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    .buy__format__method {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      & > div {
+        display: flex;
+        flex-direction: column;
+        padding-left: 20px;
+        gap: 5px;
+
+        & > div {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          & > input[type="checkbox"] {
+            transform: scale(1.5);
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}
