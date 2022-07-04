@@ -8,7 +8,6 @@
   grid-auto-rows: 300px;
   grid-template-columns: repeat(4, 200px);
   justify-content: center;
-
   align-items: flex-start;
   gap: 50px;
   row-gap: 60px;
@@ -132,7 +131,7 @@
 
 .list__view {
   margin-top: 10px;
-  min-height: 100vh;
+  min-height: 100%;
   padding: 20px;
   width: 100%;
   display: flex;
