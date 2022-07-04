@@ -7,6 +7,8 @@ const SearchByFilter = ({
   maxPrice,
   sub__categories,
   isAdress,
+  handleFormatButtonClick,
+  handlePriceRangeSubmit,
 }) => {
   return (
     <div className={styles.search__filter}>
@@ -41,37 +43,47 @@ const SearchByFilter = ({
         <div className={styles.price__range__method}>
           <p>Price Range</p>
           <div>
-            <div>
+            <form onSubmit={handlePriceRangeSubmit}>
               <div>
                 <input
-                  type="text"
+                  type="number"
                   placeholder="₱ Min"
-                  value={isNaN(minPrice.toString()) ? "" : minPrice}
-                  onChange={handlePriceRange}
+                  // value={isNaN(minPrice.toString()) ? "" : minPrice}
+                  // onChange={handlePriceRange}
                   name="min"
                 />
                 <p>-</p>
                 <input
-                  type="text"
+                  type="number"
                   placeholder="₱ Max"
                   name="max"
-                  onChange={handlePriceRange}
-                  value={isNaN(maxPrice) ? "" : maxPrice}
+                  // onChange={handlePriceRange}
+                  // defaultValue={isNaN(maxPrice) ? "" : maxPrice}
                 />
               </div>
-              <button className={styles.apply__button}>Apply</button>
-            </div>
+              <button type="submit" className={styles.apply__button}>
+                Apply
+              </button>
+            </form>
           </div>
         </div>
         <div className={styles.buy__format__method}>
           <p>Buy Format</p>
           <div>
             <div>
-              <input type="checkbox" name="buy-now" />
+              <input
+                type="checkbox"
+                name="buy-now"
+                onChange={() => handleFormatButtonClick("Buy Now")}
+              />
               <label htmlFor="buy-now">Buy Now</label>
             </div>
             <div>
-              <input type="checkbox" name="auction" />
+              <input
+                type="checkbox"
+                name="auction"
+                onChange={() => handleFormatButtonClick("Auction")}
+              />
               <label htmlFor="auction">Auction</label>
             </div>
           </div>
