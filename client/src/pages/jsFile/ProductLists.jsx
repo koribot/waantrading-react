@@ -23,34 +23,66 @@ const motor__products = [
     title:
       "16 pcs Reflective Car Motor Wheel Hub Rim Stripe Tape Decal Stickers Accessories",
     img: "https://i.ebayimg.com/images/g/HLwAAOSwOBBhAP2Y/s-l1600.jpg",
-    sub_cat: "Stickers",
+    sub_category: "Stickers",
     price: 8.99,
-    type: "Auction",
+    buyformat: "Auction",
   },
   {
     id: 2,
     title: "10 x 1.75 Flat Tread Wagon Tire 2 PK",
     img: "https://i.ebayimg.com/images/g/5r0AAOSweR1egVb2/s-l1600.jpg",
-    sub_cat: "Tires",
+    sub_category: "Tires",
     price: 26.87,
-    type: "Buy Now",
+    buyformat: "Buy Now",
   },
   {
     id: 3,
     title:
       "KKE 21/19 MX Wheels Rims For SUZUKI RM125 96-07 RM250 96-07 Motor CNC Gold Hubs",
     img: "https://i.ebayimg.com/images/g/5IcAAOSwhgRfQH2k/s-l1600.jpg",
-    sub_cat: "Rims",
+    sub_category: "Rims",
     price: 629.0,
-    type: "Auction",
+    buyformat: "Auction",
   },
   {
     id: 4,
     title: "Yamaha 300 four stroke V6 Shadow Outboard motor decals.",
     img: "https://i.ebayimg.com/images/g/vR0AAOSwzrZemEZL/s-l1600.jpg",
-    sub_cat: "Decals",
+    sub_category: "Decals",
     price: "27.99",
-    type: "Buy Now",
+    buyformat: "Buy Now",
+  },
+  {
+    id: 5,
+    title: "Yamaha 300 four stroke V6 Shadow Outboard motor decals.",
+    img: "https://i.ebayimg.com/images/g/vR0AAOSwzrZemEZL/s-l1600.jpg",
+    sub_category: "Decals",
+    price: "27.99",
+    buyformat: "Buy Now",
+  },
+  {
+    id: 6,
+    title: "Yamaha 300 four stroke V6 Shadow Outboard motor decals.",
+    img: "https://i.ebayimg.com/images/g/vR0AAOSwzrZemEZL/s-l1600.jpg",
+    sub_category: "Decals",
+    price: "27.99",
+    buyformat: "Buy Now",
+  },
+  {
+    id: 7,
+    title: "Yamaha 300 four stroke V6 Shadow Outboard motor decals.",
+    img: "https://i.ebayimg.com/images/g/vR0AAOSwzrZemEZL/s-l1600.jpg",
+    sub_category: "Decals",
+    price: "27.99",
+    buyformat: "Buy Now",
+  },
+  {
+    id: 8,
+    title: "Yamaha 300 four stroke V6 Shadow Outboard motor decals.",
+    img: "https://i.ebayimg.com/images/g/vR0AAOSwzrZemEZL/s-l1600.jpg",
+    sub_category: "Decals",
+    price: "27.99",
+    buyformat: "Buy Now",
   },
 ];
 const food_beverages__products = [
@@ -59,33 +91,33 @@ const food_beverages__products = [
     title:
       "Kagan Spicy Suka Kagan Spicy Suka Kagan Spicy Suka Kagan Spicy Suka Kagan Spicy Suka Kagan Spicy Suka",
     img: "https://scontent-ort2-2.xx.fbcdn.net/v/t39.30808-6/287319435_589775396057445_8339241769222489705_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=8bfeb9&_nc_eui2=AeEdpsuWsIvRNf1EEtGStidME-KYY-iElUoT4phj6ISVSjosNGIY8ITuME1UgPeh9R0B2RQsotJcFdNamaiEx8aE&_nc_ohc=AQEBtxfQnUsAX_lN4iq&tn=PRN1RgDyq-arcBVn&_nc_ht=scontent-ort2-2.xx&oh=00_AT-HnwKdWdgxOdJvpGMp4cqOgHeuktJ5wOMG7TpNAgp0ww&oe=62C471E8",
-    sub_cat: "Condiments",
+    sub_category: "Condiments",
     price: 150,
-    type: "Buy Now",
+    buyformat: "Buy Now",
   },
   {
     id: 2,
     title: "Karne Baka",
     img: "https://cdn.britannica.com/68/143268-050-917048EA/Beef-loin.jpg",
-    sub_cat: "Meats",
+    sub_category: "Meats",
     price: 350,
-    type: "Buy Now",
+    buyformat: "Buy Now",
   },
   {
     id: 3,
     title: "Kangkong",
     img: "https://cdn.shopify.com/s/files/1/1891/5035/products/Kankong_x700.jpg?v=1654209710",
-    sub_cat: "Vegetables",
+    sub_category: "Vegetables",
     price: 20,
-    type: "Buy Now",
+    buyformat: "Buy Now",
   },
   {
     id: 4,
     title: "Vitamilk",
     img: "https://i.ebayimg.com/images/g/WlEAAOSw6YxiO5MJ/s-l500.png",
-    sub_cat: "Drinks",
+    sub_category: "Drinks",
     price: 20,
-    type: "Buy Now",
+    buyformat: "Buy Now",
   },
 ];
 const appliances__products = [
@@ -93,33 +125,33 @@ const appliances__products = [
     id: 1,
     title: "Kagan Spicy Suka ",
     img: "https://scontent-ort2-2.xx.fbcdn.net/v/t39.30808-6/287319435_589775396057445_8339241769222489705_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=8bfeb9&_nc_eui2=AeEdpsuWsIvRNf1EEtGStidME-KYY-iElUoT4phj6ISVSjosNGIY8ITuME1UgPeh9R0B2RQsotJcFdNamaiEx8aE&_nc_ohc=AQEBtxfQnUsAX_lN4iq&tn=PRN1RgDyq-arcBVn&_nc_ht=scontent-ort2-2.xx&oh=00_AT-HnwKdWdgxOdJvpGMp4cqOgHeuktJ5wOMG7TpNAgp0ww&oe=62C471E8",
-    sub_cat: "Condiments",
+    sub_category: "Condiments",
     price: 150,
-    type: "Buy Now",
+    buyformat: "Buy Now",
   },
   {
     id: 2,
     title: "Karne Baka",
     img: "https://cdn.britannica.com/68/143268-050-917048EA/Beef-loin.jpg",
-    sub_cat: "Meats",
+    sub_category: "Meats",
     price: 350,
-    type: "Buy Now",
+    buyformat: "Buy Now",
   },
   {
     id: 3,
     title: "Kangkong",
     img: "https://cdn.shopify.com/s/files/1/1891/5035/products/Kankong_x700.jpg?v=1654209710",
-    sub_cat: "Vegetables",
+    sub_category: "Vegetables",
     price: 20,
-    type: "Buy Now",
+    buyformat: "Buy Now",
   },
   {
     id: 4,
     title: "Vitamilk",
     img: "https://i.ebayimg.com/images/g/WlEAAOSw6YxiO5MJ/s-l500.png",
-    sub_cat: "Drinks",
+    sub_category: "Drinks",
     price: 20,
-    type: "Buy Now",
+    buyformat: "Buy Now",
   },
 ];
 const clothing__products = [
@@ -127,33 +159,33 @@ const clothing__products = [
     id: 1,
     title: "Kagan Spicy Suka",
     img: "https://scontent-ort2-2.xx.fbcdn.net/v/t39.30808-6/287319435_589775396057445_8339241769222489705_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=8bfeb9&_nc_eui2=AeEdpsuWsIvRNf1EEtGStidME-KYY-iElUoT4phj6ISVSjosNGIY8ITuME1UgPeh9R0B2RQsotJcFdNamaiEx8aE&_nc_ohc=AQEBtxfQnUsAX_lN4iq&tn=PRN1RgDyq-arcBVn&_nc_ht=scontent-ort2-2.xx&oh=00_AT-HnwKdWdgxOdJvpGMp4cqOgHeuktJ5wOMG7TpNAgp0ww&oe=62C471E8",
-    sub_cat: "Condiments",
+    sub_category: "Condiments",
     price: 150,
-    type: "Buy Now",
+    buyformat: "Buy Now",
   },
   {
     id: 2,
     title: "Karne Baka",
     img: "https://cdn.britannica.com/68/143268-050-917048EA/Beef-loin.jpg",
-    sub_cat: "Meats",
+    sub_category: "Meats",
     price: 350,
-    type: "Buy Now",
+    buyformat: "Buy Now",
   },
   {
     id: 3,
     title: "Kangkong",
     img: "https://cdn.shopify.com/s/files/1/1891/5035/products/Kankong_x700.jpg?v=1654209710",
-    sub_cat: "Vegetables",
+    sub_category: "Vegetables",
     price: 20,
-    type: "Buy Now",
+    buyformat: "Buy Now",
   },
   {
     id: 4,
     title: "Vitamilk",
     img: "https://i.ebayimg.com/images/g/WlEAAOSw6YxiO5MJ/s-l500.png",
-    sub_cat: "Drinks",
+    sub_category: "Drinks",
     price: 20,
-    type: "Buy Now",
+    buyformat: "Buy Now",
   },
 ];
 
@@ -239,21 +271,22 @@ const ProductLists = () => {
   const { id } = useParams();
   const address = [];
   const [sortPrice, setSortPrice] = useState("--");
-  const [checkSubs, setCheckSubs] = useState([]);
+  const [selectedSubCategory, setSelectedSubCategory] = useState([]);
   const [minPrice, setMinPrice] = useState("");
   const [maxPrice, setMaxPrice] = useState("");
   const [view, setView] = useState(true);
   const isMobile = useMediaQuery({ query: `(max-width: 600px)` });
+  const [selectedBuyFormat, setSelectedBuyFormat] = useState([]);
+  const [selectedMinPrice, setSelectedMinPrice] = useState();
+  const [selectedMaxPrice, setSelectedMaxPrice] = useState();
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+
     if (isMobile) {
       setView(true);
     }
   }, [isMobile]);
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
 
   for (let i = 0; i < id.length; i++) {
     if (id.charAt(i) !== ":" && id.charAt(i) !== "%" && id.charAt(i) !== " ") {
@@ -268,19 +301,25 @@ const ProductLists = () => {
       categories.push(isAdress[i]);
     }
   }
-  const formattedName = categories.join("").concat("__products");
+  // const formattedName = categories.join("").concat("__products");
   const handleChange = (event) => {
     setSortPrice(event.target.value);
+    console.log(sortPrice);
   };
   const handleSubChange = (e) => {
-    if (!checkSubs.includes(e)) {
-      setCheckSubs([...checkSubs, e]);
+    if (!selectedSubCategory.includes(e)) {
+      setSelectedSubCategory([...selectedSubCategory, e]);
     } else {
-      setCheckSubs(checkSubs.filter((item) => item !== e));
+      setSelectedSubCategory(selectedSubCategory.filter((item) => item !== e));
     }
   };
 
+  // useEffect(() => {
+  //   console.log(selectedSubCategory);
+  // }, [selectedSubCategory]);
+
   const handlePriceRange = (e) => {
+    e.preventDefault();
     const target = e.target.value;
     // console.log(e.target.name);
     if (e.target.name === "min") {
@@ -290,6 +329,32 @@ const ProductLists = () => {
       // console.log(maxPrice);
     }
   };
+
+  const handleFormatButtonClick = (e) => {
+    if (!selectedBuyFormat.includes(e)) {
+      setSelectedBuyFormat([...selectedBuyFormat, e]);
+    } else {
+      setSelectedBuyFormat(selectedBuyFormat.filter((item) => item !== e));
+    }
+  };
+
+  const handlePriceRangeSubmit = (e) => {
+    e.preventDefault();
+
+    const min = e.target[0].value;
+    const max = e.target[1].value;
+
+    if (min.length > 0 && max.length > 0) {
+      setSelectedMinPrice(parseInt(min));
+      setSelectedMaxPrice(parseInt(max));
+    } else {
+      setSelectedMinPrice(0);
+      setSelectedMaxPrice(0);
+    }
+  };
+  // useEffect(() => {
+  //   console.log(selectedBuyFormat);
+  // }, [selectedBuyFormat]);
 
   return (
     <div
@@ -305,6 +370,7 @@ const ProductLists = () => {
           handleSubChange={handleSubChange}
           minPrice={minPrice}
           maxPrice={maxPrice}
+          handleFormatButtonClick={handleFormatButtonClick}
           sub__categories={
             isAdress === "Motor"
               ? motor__sub__categories
@@ -317,6 +383,7 @@ const ProductLists = () => {
               : ""
           }
           isAdress={isAdress}
+          handlePriceRangeSubmit={handlePriceRangeSubmit}
         />
         <div className={styles.left__side}>
           <div className={styles.sort__by}>
@@ -354,6 +421,11 @@ const ProductLists = () => {
                 ? clothing__products
                 : ""
             }
+            selectedSubCategory={selectedSubCategory}
+            selectedBuyFormat={selectedBuyFormat}
+            selectedMinPrice={selectedMinPrice}
+            selectedMaxPrice={selectedMaxPrice}
+            sortPrice={sortPrice}
           />
         </div>
       </div>
