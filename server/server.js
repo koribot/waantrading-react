@@ -13,6 +13,11 @@ mongoose
   .then(() => console.log("Database Connected"))
   .catch((err) => console.log(err));
 
+app.get('/', async (req, res) => {
+  res.send('Hello, this is the backend for waantrading -- UNDER CONSTRUCTION');
+});
+
+
 app.post("/createUser", async (req, res) => {
   const user = req.body;
   const newUser = new UserModel(user);
