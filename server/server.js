@@ -14,7 +14,7 @@ mongoose
   .catch((err) => console.log(err));
 
 app.get('/', async (req, res) => {
-  res.send('Hello, this is the backend for waantrading -- UNDER CONSTRUCTION');
+  res.send('Hello, this is the backend for waantrading -- UNDER CONSTRUCTIONS');
 });
 
 
